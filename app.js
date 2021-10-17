@@ -1,41 +1,37 @@
+// TODO: Include packages needed for this application
+
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generatePage = require('./src/page-template.js');
+const generatePage = require('./src/page-template.js');
 
-// const readMe = generatePage(title,github);
-
-// fs.writeFile('./sampleREADME.md', readMe, err => {
-//     if (err) throw err;
-//     console.log('Readme complete! Check out your readme.md to see the output!');
-//   });
-
+// TODO: Create an array of questions for user input
 const promptUser = () => {
     return inquirer.prompt([
       {
         type: 'input',
         name: 'title',
         message: 'What is the title of your project? (Required)', 
-        validate: titleInput => {
-            if (titleInput) {
-              return true;
-            } else {
-              console.log('Please enter a title for your project!');
-              return false;
-            }
-          }
+        // validate: titleInput => {
+        //     if (titleInput) {
+        //       return true;
+        //     } else {
+        //       console.log('Please enter a title for your project!');
+        //       return false;
+        //     }
+        //   }
       },
       {
         type: 'input',
         name: 'description',
         message: 'Please describe your project. (Required)',
-        validate: descriptionInput => {
-            if (descriptionInput) {
-              return true;
-            } else {
-              console.log('Please enter a description for your project!');
-              return false;
-            }
-          }
+        // validate: descriptionInput => {
+        //     if (descriptionInput) {
+        //       return true;
+        //     } else {
+        //       console.log('Please enter a description for your project!');
+        //       return false;
+        //     }
+        //   }
       },
       {
         type: 'input',
@@ -70,4 +66,16 @@ const promptUser = () => {
     ]);
   };
   
-  promptUser().then(answers => console.log(answers));
+// TODO: Create a function to write README file
+// TODO: Create a function to initialize app
+// Function call to initialize app
+promptUser()
+// .then(promptProject)
+.then(readMeData => {
+    const readMe = generatePage(readMeData);
+    fs.writeFile('./sampleREADME.md', readMe, err => {
+      if (err) throw new Error(err);
+
+      console.log('Readme complete! Check out your readme.md to see the output!');
+    });
+});
