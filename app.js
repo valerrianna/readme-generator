@@ -3,6 +3,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generatePage = require('./src/page-template.js');
+const Choices = require('inquirer/lib/objects/choices');
 
 // TODO: Create an array of questions for user input
 const promptUser = () => {
@@ -42,6 +43,12 @@ const promptUser = () => {
         type: 'input',
         name: 'usage',
         message: 'How do you use this project?'
+      },
+      {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Which license would you like to use?',
+        choices: ['Apache', 'GNU-General-Public', 'MIT', 'None']
       },
       {
         type: 'input',

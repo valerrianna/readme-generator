@@ -2,19 +2,29 @@ module.exports = templateData => {
     console.log(templateData);
 
     return `# ${templateData.title}
+
+## Licensing
+[![license](https://img.shields.io/badge/license-${templateData.licensing}-blue)](https://shields.io)
+
 ## Description
 ${templateData.description}
 
 ## Table of Contents
 1. [Installation](#Installation)
 2. [Usage](#Usage)
-3. [Contributing](#Contributing)
+3. [License](#License)
+4. [Contributing](#Contributing)
+5. [Tests](#Tests)
+6. [Questions](#Questions)
 
 ## Installation
 ${templateData.installation}
 
 ## Usage
 ${templateData.usage}
+
+## License:
+${templateData.licensing}
 
 ## Contributing
 ${templateData.contribution}
