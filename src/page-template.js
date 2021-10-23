@@ -4,18 +4,18 @@ module.exports = templateData => {
     return `# ${templateData.title}
 
 ## Licensing
-[![license](https://img.shields.io/badge/license-${templateData.licensing}-blue)](https://shields.io)
+[![license](https://img.shields.io/badge/license-${templateData.license}-blue)](https://shields.io)
 
 ## Description
 ${templateData.description}
 
 ## Table of Contents
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [License](#License)
-4. [Contributing](#Contributing)
-5. [Tests](#Tests)
-6. [Questions](#Questions)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+6. [Questions](#questions)
 
 ## Installation
 ${templateData.installation}
@@ -23,14 +23,14 @@ ${templateData.installation}
 ## Usage
 ${templateData.usage}
 
-## License:
-${templateData.licensing}
+## License 
+${templateData.license}
 
-## Contributing
+## Contributing 
 ${templateData.contribution}
 
-## Tests
-${templateData.tests}
+## Tests 
+${templateData.test}
 
 ## Questions
 Github Username: [${templateData.username}](https://github.com/${templateData.username})
